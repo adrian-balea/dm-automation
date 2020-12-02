@@ -1,15 +1,13 @@
 import Home_Page from "../Page-Objects/Pages/Home_Page";
 import Product_Page from "../Page-Objects/Pages/Product_Page";
+import Country_Popup from "../Page-Objects/Components/Country_Popup";
 
 describe("Place order as Guest user using credit Card", () => {
   it("Select the country", () => {
     Home_Page.open("https://p3.stage6.dm.projecta.com/us/en");
-    // browser.url("https://p3.stage6.dm.projecta.com/us/en");
-    browser.maximizeWindow();
-    const selectcontry = $("#country-modal-submit");
-    selectcontry.waitForExist();
-    selectcontry.click();
+    Country_Popup.submitCountrySelection();
   });
+  
   it("Select the product", () => {
     const mylink = $("#dm-primary-nav > li:nth-child(3)");
     mylink.waitForExist();
