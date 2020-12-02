@@ -4,10 +4,27 @@ class Product_Page {
     return $('//*[@id="sizeSelector"]//li//a[@data-sku-code ="800090828511"]');
   }
 
+  get addToCartButton() {
+    return $("#addToCartButton");
+  }
+
+  get checkoutButton(){
+    return $("a=Checkout")
+  }
+
   // Methods
-  clickOnProductSize() {
+  selectProductSize() {
     this.productSize.waitForExist();
     this.productSize.click();
+  }
+
+  clickOnAddToCart(){
+    this.addToCartButton.click()
+  }
+
+  clickOnCheckoutButton(){
+    this.checkoutButton.waitForExist()
+    this.checkoutButton.click()
   }
 }
 

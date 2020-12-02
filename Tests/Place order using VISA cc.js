@@ -16,15 +16,11 @@ describe("Place order as Guest user using credit Card", () => {
   });
 
   it("Verify the PDP page and addto bag", () => {
-    Product_Page.clickOnProductSize();
-    const addtocard = $("#addToCartButton");
-    addtocard.waitForExist();
-    addtocard.click();
-    // const checkoutbn = $('a=Checkout')
-    const checkoutbn = $(".add-to-cart-button");
-    checkoutbn.waitForExist();
-    checkoutbn.click();
+    Product_Page.selectProductSize();
+    Product_Page.clickOnAddToCart();
+    Product_Page.clickOnCheckoutButton();
   });
+
   it("Verify the My Bag to bag page", () => {
     const mybag = $("h1.cart-headline");
     // console.log(mybag.getText())
