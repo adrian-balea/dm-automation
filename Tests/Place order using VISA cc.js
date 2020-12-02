@@ -1,9 +1,10 @@
-// import Home_Page from '../Page-Objects/Pages/Home_Page'
+import Home_Page from "../Page-Objects/Pages/Home_Page";
 import Product_Page from "../Page-Objects/Pages/Product_Page";
 
 describe("Place order as Guest user using credit Card", () => {
   it("Select the country", () => {
-    browser.url("https://p3.stage6.dm.projecta.com/us/en");
+    Home_Page.open("https://p3.stage6.dm.projecta.com/us/en");
+    // browser.url("https://p3.stage6.dm.projecta.com/us/en");
     browser.maximizeWindow();
     const selectcontry = $("#country-modal-submit");
     selectcontry.waitForExist();
@@ -20,7 +21,6 @@ describe("Place order as Guest user using credit Card", () => {
   });
 
   it("Verify the PDP page and addto bag", () => {
-    
     Product_Page.clickOnProductSize();
     const addtocard = $("#addToCartButton");
     addtocard.waitForExist();
