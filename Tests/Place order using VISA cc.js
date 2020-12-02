@@ -3,8 +3,10 @@ import Product_Page from "../Page-Objects/Pages/Product_Page";
 import Country_Popup from "../Page-Objects/Components/Country_Popup";
 import Header from "../Page-Objects/Components/Header";
 import ProductListing_Page from "../Page-Objects/Pages/ProductListing_Page";
+import Bag_Page from "../Page-Objects/Pages/Bag_Page";
 
 describe("Place order as Guest user using credit Card", () => {
+  
   it("Select the country", () => {
     Home_Page.open("https://p3.stage6.dm.projecta.com/us/en");
     Country_Popup.submitCountrySelection();
@@ -15,23 +17,17 @@ describe("Place order as Guest user using credit Card", () => {
     ProductListing_Page.clickOnProductTile();
   });
 
-  it("Verify the PDP page and addto bag", () => {
+  it("Adds product to bag and proceeds to checkout", () => {
     Product_Page.selectProductSize();
     Product_Page.clickOnAddToCart();
     Product_Page.clickOnCheckoutButton();
   });
 
-  it("Verify the My Bag to bag page", () => {
-    const mybag = $("h1.cart-headline");
-    // console.log(mybag.getText())
-    const chekbtn = $('button[data-qa-automation ="cart-checkout-button"]');
-    chekbtn.waitForExist();
-    // chekbtn.scrollIntoView()
-    chekbtn.click();
+  it("Navigates to checkout-login page", () => {
+    Bag_Page.clickOnCheckoutButton();
   });
 
   it("Checkout a with Guest user details", () => {
-    // guest user btn code
     const checkoutguestBtn = $("#guestForm > div:nth-child(2) > button");
     checkoutguestBtn.waitForExist();
     checkoutguestBtn.click();
