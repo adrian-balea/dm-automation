@@ -1,21 +1,18 @@
 import Home_Page from "../Page-Objects/Pages/Home_Page";
 import Product_Page from "../Page-Objects/Pages/Product_Page";
 import Country_Popup from "../Page-Objects/Components/Country_Popup";
+import Header from "../Page-Objects/Components/Header";
+import ProductListing_Page from "../Page-Objects/Pages/ProductListing_Page";
 
 describe("Place order as Guest user using credit Card", () => {
   it("Select the country", () => {
     Home_Page.open("https://p3.stage6.dm.projecta.com/us/en");
     Country_Popup.submitCountrySelection();
   });
-  
+
   it("Select the product", () => {
-    const mylink = $("#dm-primary-nav > li:nth-child(3)");
-    mylink.waitForExist();
-    mylink.click();
-    //  select the produccleat  //
-    const plpproduct = $('a[sid="11822006"]');
-    plpproduct.waitForClickable();
-    plpproduct.click();
+    Header.navigateToMenBoots();
+    ProductListing_Page.clickOnProductTile();
   });
 
   it("Verify the PDP page and addto bag", () => {
