@@ -128,15 +128,14 @@ exports.config = {
   // The only one supported by default is 'dot'
   // see also: https://webdriver.io/docs/dot-reporter.html
   reporters: ["spec"],
-
+  port: 4444,
   //
   // Options to be passed to Mocha.
   // See the full list at http://mochajs.org/
   mochaOpts: {
-    // Babel setup
-    require: ["@babel/register"],
     ui: "bdd",
-    timeout: 60000
+    timeout: 60000,
+    require: ["@babel/register"]
   }
   //
   // =====
