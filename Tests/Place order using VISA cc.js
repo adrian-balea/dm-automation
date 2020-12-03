@@ -4,9 +4,10 @@ import Country_Popup from "../Page-Objects/Components/Country_Popup";
 import Header from "../Page-Objects/Components/Header";
 import ProductListing_Page from "../Page-Objects/Pages/ProductListing_Page";
 import Bag_Page from "../Page-Objects/Pages/Bag_Page";
+import LoginCheckout_Page from "../Page-Objects/Pages/LoginCheckout_Page";
+import ShippingAndBilling_Page from "../Page-Objects/Pages/ShippingAndBilling_Page";
 
 describe("Place order as Guest user using credit Card", () => {
-  
   it("Select the country", () => {
     Home_Page.open("https://p3.stage6.dm.projecta.com/us/en");
     Country_Popup.submitCountrySelection();
@@ -28,44 +29,11 @@ describe("Place order as Guest user using credit Card", () => {
   });
 
   it("Checkout a with Guest user details", () => {
-    const checkoutguestBtn = $("#guestForm > div:nth-child(2) > button");
-    checkoutguestBtn.waitForExist();
-    checkoutguestBtn.click();
+    LoginCheckout_Page.clickOnGuestCheckout();
   });
 
   it("shipping & billing details for Guest user", () => {
-    const input = $("#contact-email");
-    input.waitForExist();
-    input.setValue("martentesting@gmail.com");
-    const loginchb = $(
-      '//*[@id="shippingAddressForm"]//*[@id="address.firstName"]'
-    );
-    loginchb.setValue("testravi");
-
-    const uselastname = $(
-      '//*[@id="shippingAddressForm"]//*[@id="address.surname"]'
-    );
-    uselastname.setValue("kumar");
-
-    const useaddress = $(
-      '//*[@id="shippingAddressForm"]//*[@id="loqateAdressSearchTxt"]'
-    );
-    useaddress.setValue("test");
-
-    ///////  select the dropdown value ///////////
-    const valuedrop = $(
-      "#shipping-i18n-address-form > section.loqate-address.js-loqate-address.active > div.form-group.loqate-form > div.loqate-search-options > div.address-list > div:nth-child(1) > div > span.txt"
-    );
-    valuedrop.waitForExist();
-    valuedrop.click();
-
-    const userphone = $(
-      '//*[@id="shippingAddressForm"]//*[@id="address.phone"]'
-    );
-    userphone.setValue("12345678911");
-    const conttopaybtn = $("#addressSubmit");
-    conttopaybtn.scrollIntoView();
-    conttopaybtn.click();
+    ShippingAndBilling_Page.enterNewAddressAsGuest();
   });
 
   it("Review and payment page details for Guest user", () => {
