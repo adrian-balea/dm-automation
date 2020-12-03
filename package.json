@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "wdio wdio.conf.js",
+    "jenkins": "java -jar jenkins.war -httpPort:8080 --enable-future-java",
     "report": "allure generate allure-results --clean && allure open"
   },
   "keywords": [
