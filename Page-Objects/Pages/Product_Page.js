@@ -1,15 +1,19 @@
 class Product_Page {
   // Selectors
   get productSize() {
-    return $('//*[@id="sizeSelector"]//li//a[@data-sku-code ="800090828511"]');
+    //For US
+    // return $('//*[@id="sizeSelector"]//li//a[@data-sku-code ="800090828511"]');
+
+    //For UK
+    return $('//*[@id="sizeSelector"]//li//a[@data-sku-code ="190665311945"]');
   }
 
   get addToCartButton() {
     return $("#addToCartButton");
   }
 
-  get checkoutButton(){
-    return $("a=Checkout")
+  get checkoutButton() {
+    return $("a=Checkout");
   }
 
   // Methods
@@ -18,13 +22,13 @@ class Product_Page {
     this.productSize.click();
   }
 
-  clickOnAddToCart(){
-    this.addToCartButton.click()
+  clickOnAddToCart() {
+    this.addToCartButton.click();
   }
 
-  clickOnCheckoutButton(){
-    this.checkoutButton.waitForExist()
-    this.checkoutButton.click()
+  clickOnCheckoutButton() {
+    this.checkoutButton.waitForExist();
+    this.checkoutButton.click();
   }
 }
 

@@ -28,10 +28,12 @@ class ShippingAndBilling_Page {
     this.emailField.setValue("ayatacommerce@mailinator.com");
     this.firstNameField.setValue("John");
     this.lastNameField.setValue("Smith");
-    this.shippingAddressSearchField.setValue("Test");
+    // this.shippingAddressSearchField.setValue("Test");
+    this.shippingAddressSearchField.setValue("7 Deansgate");
     this.suggestedAddress.waitForExist();
     this.suggestedAddress.click();
-    this.phoneNumberField.setValue("12345678911");
+    // this.phoneNumberField.setValue("12345678911");
+    this.phoneNumberField.setValue("07771540640");
     this.continiueToPaymentButton.scrollIntoView();
     this.continiueToPaymentButton.click();
   }
