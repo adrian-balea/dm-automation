@@ -7,6 +7,9 @@ class Payment_Page {
       "#adyen-encrypted-form > div > div.chckt-pm.chckt-pm-card.js-chckt-pm.js-chckt-pm__pm-holder > div.chckt-pm__header.js-chckt-pm__header"
     );
   }
+  get payPalOption() {
+    return $("[data-pm='paypal'] .js-chckt-pm__header");
+  }
   get creditCardNumberField() {
     return $("#encryptedCardNumber");
   }
@@ -25,6 +28,29 @@ class Payment_Page {
     return $(
       "body > div.js-device-info > main > div > div.container.checkout-container.checkout-roving > div.col-xs-12.col-sm-5.col-md-7 > div.adyen-pay-button__wrapper"
     );
+  }
+  get payPalButton() {
+    return $("#paypal-container");
+  }
+
+  get paypalEmail() {
+    return $("#email");
+  }
+
+  get paypalPassword() {
+    return $("#password");
+  }
+
+  get paypalLoginButton() {
+    return $("#btnLogin");
+  }
+
+  get acceptPaypalCookiesLink() {
+    return $("#acceptAllButton");
+  }
+
+  get paypalSubmitButton() {
+    return $("#payment-submit-btn");
   }
 
   placeOrderUsingCreditCard() {
@@ -46,6 +72,29 @@ class Payment_Page {
     this.cardHolderName.setValue("J Smith");
     this.placeOrderButton.scrollIntoView();
     this.placeOrderButton.click();
+  }
+
+  placeOrderUsingPaypal() {
+    this.editShippingAddressLink.waitForExist();
+    this.payPalOption.waitForExist();
+    this.payPalOption.scrollIntoView();
+    this.payPalOption.click();
+    this.payPalButton.waitForExist();
+    this.payPalButton.scrollIntoView();
+    this.payPalButton.click();
+    browser.pause(10000);
+    browser.switchWindow("www.sandbox.paypal.com/");
+    this.paypalEmail.waitForExist();
+    this.paypalEmail.clearValue();
+    this.paypalEmail.setValue("sb-rnibz2253238@personal.example.com");
+    this.paypalPassword.setValue("9Nja2.Ty");
+    this.paypalLoginButton.click();
+    this.acceptPaypalCookiesLink().waitForExist();
+    this.acceptPaypalCookiesLink().click();
+    this.paypalSubmitButton.waitForExist();
+    this.paypalSubmitButton.scrollIntoView();
+    this.paypalSubmitButton.click();
+    browser.pause(5000);
   }
 }
 export default new Payment_Page();

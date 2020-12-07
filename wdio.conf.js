@@ -51,6 +51,11 @@ exports.config = {
       maxInstances: 5,
       //
       browserName: "chrome",
+      // Headless Chrome
+      // 'goog:chromeOptions': {
+      //   args: ['--headless', '--disable-gpu', '--window-size=1280,800'],
+      //   // binary: '/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
+      //   },
       acceptInsecureCerts: true
       // If outputDir is provided WebdriverIO can capture driver session logs
       // it is possible to configure which logTypes to include/exclude.
