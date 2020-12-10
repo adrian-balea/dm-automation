@@ -1,12 +1,12 @@
 class Payment_Page {
-<<<<<<< HEAD
+//<<<<<<< HEAD
     get editShippingAddressLinks() {return $("#addressPull");}
   get editShippingAddressLink() {return $("#addressPull"); }
-=======
+//=======
     get editShippingAddressLink() {return $("#addressPull");}
   get editShippingAddressLink() {return $("#addressPull");
   }
->>>>>>> 4196ff7beaa65067939005798b3e77701f2df6aa
+//>>>>>>> 4196ff7beaa65067939005798b3e77701f2df6aa
   get creditCardOption() {return $("#adyen-encrypted-form > div > div.chckt-pm.chckt-pm-card.js-chckt-pm.js-chckt-pm__pm-holder > div.chckt-pm__header.js-chckt-pm__header"
     ); }
   
@@ -73,13 +73,13 @@ get payPalOption(){return $('//*[@id="adyen-encrypted-form"]//div[@class="chckt-
   }
 
   placeOrderUsingPaypal() {
-<<<<<<< HEAD
+
     this.editShippingAddressLinks.waitForExist();
     browser.pause(10000);
-=======
+
     this.editShippingAddressLink.waitForExist();
     browser.pause(7000);
->>>>>>> 4196ff7beaa65067939005798b3e77701f2df6aa
+
     this.payPalOption.waitForExist();
     this.payPalOption.scrollIntoView();
     this.payPalOption.click();
@@ -87,7 +87,7 @@ get payPalOption(){return $('//*[@id="adyen-encrypted-form"]//div[@class="chckt-
     this.payPalButton.scrollIntoView();
     this.payPalButton.click();
     browser.pause(10000);
-<<<<<<< HEAD
+//<<<<<<< HEAD
     
 
     ///////// handel the windows /////////
@@ -110,7 +110,7 @@ get payPalOption(){return $('//*[@id="adyen-encrypted-form"]//div[@class="chckt-
     browser.pause(10000);
     browser.switchToWindow(parentGUID);
     console.log("Page title after switching back to Parent: "+ browser.getTitle());
-=======
+//=======
     browser.switchWindow("www.sandbox.paypal.com/");
     this.paypalEmail.waitForExist();
     this.paypalEmail.clearValue();
@@ -126,7 +126,7 @@ get payPalOption(){return $('//*[@id="adyen-encrypted-form"]//div[@class="chckt-
     browser.pause(5000);
     browser.switchWindow('default');
     browser.pause(10000);
->>>>>>> 4196ff7beaa65067939005798b3e77701f2df6aa
+//>>>>>>> 4196ff7beaa65067939005798b3e77701f2df6aa
   }
 }
 export default new Payment_Page();
