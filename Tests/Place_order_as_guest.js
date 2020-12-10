@@ -57,17 +57,17 @@ describe("Place order as Guest user using credit Card or Paypal", () => {
     //     Payment_Page.placeOrderUsingPaypal();
     //   });
 
-  it("Verify the order details", () => {
+  // it("Verify the order details", () => {
     
-     OrderConfirmation_Page.verifyThankYouText();
-  });
-    it ("Places order with credit card", () => {
-       Payment_Page.placeOrderUsingCreditCard();
-   });
+  //    OrderConfirmation_Page.verifyThankYouText();
+  // });
+  //   it ("Places order with credit card", () => {
+  //      Payment_Page.placeOrderUsingCreditCard();
+  //  });
 
-   it ("Places order with PayPal", () => {
-       Payment_Page.placeOrderUsingPaypal();
-     });
+  //  it ("Places order with PayPal", () => {
+  //      Payment_Page.placeOrderUsingPaypal();
+  //    });
 
   it("Verify the order details", () => {
     
