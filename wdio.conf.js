@@ -89,8 +89,12 @@ exports.config = {
   // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
   // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
   // gets prepended directly.
+<<<<<<< HEAD
  // baseUrl: "http://localhost",
   baseUrl: 'https://p3.stage6.dm.projecta.com/',
+=======
+   baseUrl: 'https://p3.stage6.dm.projecta.com/',
+>>>>>>> 4196ff7beaa65067939005798b3e77701f2df6aa
   //
   // Default timeout for all waitFor* commands.
   waitforTimeout: 10000,

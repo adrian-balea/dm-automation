@@ -9,9 +9,15 @@ import ShippingAndBilling_Page from "../Page-Objects/Pages/ShippingAndBilling_Pa
 import Payment_Page from "../Page-Objects/Pages/Payment_Page";
 import OrderConfirmation_Page from "../Page-Objects/Pages/OrderConfirmation_Page";
 //import locatordata from "../TestData/locatorData";
+<<<<<<< HEAD
 
 
 describe("Place order as Guest user using credit Card or Paypal", () => {
+=======
+
+
+describe("Place order as Guest user using credit Card", () => {
+>>>>>>> 4196ff7beaa65067939005798b3e77701f2df6aa
   it("Navigates to the DM website", () => {
      browser.url('/')
 		browser.maximizeWindow();
@@ -43,6 +49,7 @@ describe("Place order as Guest user using credit Card or Paypal", () => {
     ShippingAndBilling_Page.enterNewAddressAsGuest();
   });
 
+<<<<<<< HEAD
       it ("Places order with credit card", () => {
          Payment_Page.placeOrderUsingCreditCard();
      });
@@ -54,6 +61,20 @@ describe("Place order as Guest user using credit Card or Paypal", () => {
   it("Verify the order details", () => {
     
      OrderConfirmation_Page.verifyThankYouText();
+
+    it ("Places order with credit card", () => {
+       Payment_Page.placeOrderUsingCreditCard();
+   });
+
+   it ("Places order with PayPal", () => {
+       Payment_Page.placeOrderUsingPaypal();
+     });
+
+  it("Verify the order details", () => {
+    
+   // browser.pause(15000);
+    OrderConfirmation_Page.verifyThankYouText();
+>>>>>>> 4196ff7beaa65067939005798b3e77701f2df6aa
     
   });
 });
