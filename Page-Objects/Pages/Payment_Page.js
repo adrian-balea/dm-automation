@@ -75,42 +75,27 @@ get payPalOption(){return $('//*[@id="adyen-encrypted-form"]//div[@class="chckt-
   placeOrderUsingPaypal() {
 
     this.editShippingAddressLinks.waitForExist();
-    browser.pause(10000);
-
     this.editShippingAddressLink.waitForExist();
-    browser.pause(7000);
-
     this.payPalOption.waitForExist();
     this.payPalOption.scrollIntoView();
     this.payPalOption.click();
     this.payPalButton.waitForExist();
     this.payPalButton.scrollIntoView();
     this.payPalButton.click();
-    browser.pause(10000);
-//<<<<<<< HEAD
-    
-
-    ///////// handel the windows /////////
     var parentGUID = browser.getWindowHandle();
-    
     console.log("Page title before Switching : "+ browser.getTitle());
 		console.log("Total Windows : "+parentGUID.length);
-    
-        browser.switchWindow("www.sandbox.paypal.com/");
-        this.paypalEmail.waitForExist();
-        this.paypalEmail.clearValue();
-        this.paypalEmail.setValue("sb-rnibz2253238@personal.example.com");
-        this.paypalPassword.setValue("9Nja2.Ty");
-        this.paypalLoginButton.click();
-        browser.pause(10000);
-        this.paypalSubmitButton.waitForExist();
-        this.paypalSubmitButton.scrollIntoView();
-        this.paypalSubmitButton.click();
-     
-    browser.pause(10000);
+    browser.switchWindow("www.sandbox.paypal.com/");
+    this.paypalEmail.waitForExist();
+    this.paypalEmail.clearValue();
+    this.paypalEmail.setValue("sb-rnibz2253238@personal.example.com");
+    this.paypalPassword.setValue("9Nja2.Ty");
+    this.paypalLoginButton.click();
+    this.paypalSubmitButton.waitForExist();
+    this.paypalSubmitButton.scrollIntoView();
+    this.paypalSubmitButton.click();
     browser.switchToWindow(parentGUID);
     console.log("Page title after switching back to Parent: "+ browser.getTitle());
-//=======
     browser.switchWindow("www.sandbox.paypal.com/");
     this.paypalEmail.waitForExist();
     this.paypalEmail.clearValue();
@@ -119,7 +104,6 @@ get payPalOption(){return $('//*[@id="adyen-encrypted-form"]//div[@class="chckt-
     this.paypalLoginButton.click();
     //this.acceptPaypalCookiesLink().waitForExist();
    // this.acceptPaypalCookiesLink().click();
-    browser.pause(10000);
     this.paypalSubmitButton.waitForExist();
     this.paypalSubmitButton.scrollIntoView();
     this.paypalSubmitButton.click();
