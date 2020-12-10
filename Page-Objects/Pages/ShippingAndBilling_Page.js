@@ -1,3 +1,5 @@
+var config = require("../../TestData/TestData");
+
 class ShippingAndBilling_Page {
   get emailField() {
     return $("#contact-email");
@@ -34,8 +36,8 @@ class ShippingAndBilling_Page {
   enterNewAddressAsGuest() {
     this.emailField.waitForExist();
     this.emailField.setValue("ayatacommerce@mailinator.com");
-    this.firstNameField.setValue("John");
-    this.lastNameField.setValue("Smith");
+    this.firstNameField.setValue(config.firstName);
+    this.lastNameField.setValue(config.lastName);
     // this.shippingAddressSearchField.setValue("Test");
     this.shippingAddressSearchField.setValue("7 Deansgate");
     this.suggestedAddress.waitForExist();
