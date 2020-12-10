@@ -1,4 +1,4 @@
-module.exports ={
-    firstName = 'John',
-    lastName = 'Smith'
-}
+module.exports = {
+  firstName: "John",
+  lastName: "Smith"
+};
