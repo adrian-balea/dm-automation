@@ -33,8 +33,8 @@ describe("Place order as Guest user using credit Card", () => {
     OrderConfirmation_Page.verifyThankYouText();
   });
 
-  it("Places order as guest using Paypal", () => {
-    Payment_Page.placeOrderUsingPaypal();
-    OrderConfirmation_Page.verifyThankYouText();
-  });
+  // it("Places order as guest using Paypal", () => {
+  //   Payment_Page.placeOrderUsingPaypal();
+  //   OrderConfirmation_Page.verifyThankYouText();
+  // });
 });

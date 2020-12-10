@@ -5,6 +5,8 @@ class Bag_Page {
 
   clickOnCheckoutButton() {
     this.checkoutButton.waitForExist();
+    this.checkoutButton.scrollIntoView();
+    this.checkoutButton.waitForClickable();
     this.checkoutButton.click();
   }
 }

@@ -126,7 +126,7 @@ get payPalOption(){return $('//*[@id="adyen-encrypted-form"]//div[@class="chckt-
     browser.pause(5000);
     browser.switchWindow('default');
     browser.pause(10000);
-//>>>>>>> 4196ff7beaa65067939005798b3e77701f2df6aa
+
   }
 }
 export default new Payment_Page();

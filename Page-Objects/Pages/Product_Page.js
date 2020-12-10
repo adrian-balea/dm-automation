@@ -21,7 +21,7 @@ class Product_Page {
   get productSize() {return $('//*[@id="sizeSelector"]//li[2]//a');}
   get addToCartButton() {return $("#addToCartButton");}
   get checkoutButton() {return $("a=Checkout");}
-//>>>>>>> 4196ff7beaa65067939005798b3e77701f2df6aa
+
 
   // Methods
 
