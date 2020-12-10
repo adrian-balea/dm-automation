@@ -1,10 +1,8 @@
 class ProductListing_Page {
-  get productTile() {
-    // For US
-    // return $('a[sid="11822006"]');
-    
+  get productTile() {return $('#img-11822006');
+  
     //For UK
-    return $('a[sid="25637001"]');
+    //return $('a[sid="25637001"]');
   }
 
   clickOnProductTile() {
