@@ -1,5 +1,4 @@
 # Ignoring the Allure reporting folders
 allure-report/
 allure-results/
-
 node_modules/

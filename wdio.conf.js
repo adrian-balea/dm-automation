@@ -51,11 +51,6 @@ exports.config = {
       maxInstances: 5,
       //
       browserName: "chrome",
-      // Headless Chrome
-      // 'goog:chromeOptions': {
-      //   args: ['--headless', '--disable-gpu', '--window-size=1280,800'],
-      //   // binary: '/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
-      //   },
       acceptInsecureCerts: true
       // If outputDir is provided WebdriverIO can capture driver session logs
       // it is possible to configure which logTypes to include/exclude.
@@ -94,7 +89,12 @@ exports.config = {
   // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
   // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
   // gets prepended directly.
+//<<<<<<< HEAD
+ // baseUrl: "http://localhost",
+  baseUrl: 'https://p3.stage6.dm.projecta.com/',
+//=======
    baseUrl: 'https://p3.stage6.dm.projecta.com/',
+//>>>>>>> 4196ff7beaa65067939005798b3e77701f2df6aa
   //
   // Default timeout for all waitFor* commands.
   waitforTimeout: 10000,
