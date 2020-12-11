@@ -35,7 +35,7 @@ class ShippingAndBilling_Page {
 
   enterNewAddressAsGuest() {
     this.emailField.waitForExist();
-    this.emailField.setValue("ayatacommerce@mailinator.com");
+    this.emailField.setValue(config.guestUserEmail);
     this.firstNameField.setValue(config.firstName);
     this.lastNameField.setValue(config.lastName);
     // this.shippingAddressSearchField.setValue("Test");

@@ -1,4 +1,5 @@
 module.exports = {
   firstName: "John",
-  lastName: "Smith"
+  lastName: "Smith",
+  guestUserEmail: "ayatacommerce@mailinator.com"
 };
