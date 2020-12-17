@@ -1,3 +1,5 @@
+var config = require("../../TestData/TestData");
+
 class Payment_Page {
   get editShippingAddressLinks() {
     return $("#addressPull");
@@ -63,9 +65,9 @@ class Payment_Page {
     return $("#acceptAllButton");
   }
 
-  get paypalSubmitButton() {
-    return $("#payment-submit-btn");
-  }
+  get paypalSubmitButton() { return $("#payment-submit-btn");  }
+  get cookieacceptButton() {return $("#onetrust-accept-btn-handler");}
+    
 
   placeOrderUsingCreditCard() {
     this.editShippingAddressLink.waitForExist();
@@ -75,15 +77,15 @@ class Payment_Page {
     browser.switchToParentFrame();
     browser.switchToFrame(0);
     this.creditCardNumberField.waitForExist();
-    this.creditCardNumberField.setValue("4444333322221111");
+    this.creditCardNumberField.setValue(config.creditCardNumber);
     browser.switchToParentFrame();
     browser.switchToFrame(1);
-    this.creditCardExpiryDate.setValue("03/30");
+    this.creditCardExpiryDate.setValue(config.creditCardExpiryDate);
     browser.switchToParentFrame();
     browser.switchToFrame(2);
-    this.creditCardCVV.setValue("737");
+    this.creditCardCVV.setValue(config.creditCardCVV);
     browser.switchToParentFrame();
-    this.cardHolderName.setValue("J Smith");
+    this.cardHolderName.setValue(config.cardHolderName);
     this.placeOrderButton.scrollIntoView();
     this.placeOrderButton.click();
   }
@@ -98,12 +100,13 @@ class Payment_Page {
     browser.pause(10000);
     ///////// handel the windows /////////
     var parentGUID = browser.getWindowHandle();
-    browser.switchWindow("www.sandbox.paypal.com/");
+    browser.switchWindow(config.payPalURL);
     this.paypalEmail.waitForExist();
     this.paypalEmail.clearValue();
-    this.paypalEmail.setValue("sb-rnibz2253238@personal.example.com");
-    this.paypalPassword.setValue("9Nja2.Ty");
+    this.paypalEmail.setValue(config.payPallUserEmail);
+    this.paypalPassword.setValue(config.payPallUserPassword);
     this.paypalLoginButton.click();
+    /// paypal cokies //////////
     browser.pause(10000);
     this.paypalSubmitButton.waitForExist();
     this.paypalSubmitButton.scrollIntoView();

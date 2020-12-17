@@ -38,13 +38,14 @@ class ShippingAndBilling_Page {
     this.emailField.setValue(config.guestUserEmail);
     this.firstNameField.setValue(config.firstName);
     this.lastNameField.setValue(config.lastName);
-    // this.shippingAddressSearchField.setValue("Test");
-    this.shippingAddressSearchField.setValue("7 Deansgate");
+    this.shippingAddressSearchField.scrollIntoView();
+    this.shippingAddressSearchField.setValue(config.guestUserAddress);
     this.suggestedAddress.waitForExist();
     this.suggestedAddress.click();
-    // this.phoneNumberField.setValue("12345678911");
-    this.phoneNumberField.setValue("07771540640");
+    browser.pause(5000);
+    this.phoneNumberField.setValue(config.guestUserMobileNumber);
     this.continiueToPaymentButton.scrollIntoView();
+    browser.pause(1000);
     this.continiueToPaymentButton.click();
   }
 }
