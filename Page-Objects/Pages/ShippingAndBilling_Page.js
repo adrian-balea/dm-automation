@@ -42,7 +42,7 @@ class ShippingAndBilling_Page {
     this.shippingAddressSearchField.setValue(config.guestUserAddress);
     this.suggestedAddress.waitForExist();
     this.suggestedAddress.click();
-    browser.pause(5000);
+    browser.pause(1000);
     this.phoneNumberField.setValue(config.guestUserMobileNumber);
     this.continiueToPaymentButton.scrollIntoView();
     browser.pause(1000);
