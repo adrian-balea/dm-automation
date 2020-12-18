@@ -1,4 +1,5 @@
 module.exports = {
+  applicationURL:"https://p3.stage6.dm.projecta.com/uk/en_gb",
   firstName: "John",
   lastName: "Smith",
   guestUserEmail: "ayatacommerce@mailinator.com",

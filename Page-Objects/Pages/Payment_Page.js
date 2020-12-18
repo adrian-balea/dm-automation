@@ -61,12 +61,11 @@ class Payment_Page {
     return $("#btnLogin");
   }
 
-  get acceptPaypalCookiesLink() {
-    return $("#acceptAllButton");
+  get acceptPaypalCookiesLink() {return $("#acceptAllButton");
   }
 
   get paypalSubmitButton() { return $("#payment-submit-btn");  }
-  get cookieacceptButton() {return $("#onetrust-accept-btn-handler");}
+  
     
 
   placeOrderUsingCreditCard() {
@@ -106,8 +105,13 @@ class Payment_Page {
     this.paypalEmail.setValue(config.payPallUserEmail);
     this.paypalPassword.setValue(config.payPallUserPassword);
     this.paypalLoginButton.click();
-    /// paypal cokies //////////
     browser.pause(10000);
+    /// paypal cokies //////////
+    var cookies = this.acceptPaypalCookiesLink.getText();
+     if (cookies == "Accept Cookies"){
+    this.acceptPaypalCookiesLink.waitForExist();
+    this.acceptPaypalCookiesLink.click();
+    } 
     this.paypalSubmitButton.waitForExist();
     this.paypalSubmitButton.scrollIntoView();
     this.paypalSubmitButton.click();

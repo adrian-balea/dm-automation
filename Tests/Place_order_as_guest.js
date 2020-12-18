@@ -9,6 +9,7 @@ import ShippingAndBilling_Page from "../Page-Objects/Pages/ShippingAndBilling_Pa
 import Payment_Page from "../Page-Objects/Pages/Payment_Page";
 import OrderConfirmation_Page from "../Page-Objects/Pages/OrderConfirmation_Page";
 
+
 describe("Place order as Guest user using credit Card", () => {
   beforeEach(() => {
    Home_Page.open("https://p3.stage6.dm.projecta.com/uk/en_gb");    
@@ -29,7 +30,7 @@ describe("Place order as Guest user using credit Card", () => {
   });
 
    it("Places order as guest using credit card", () => {
-    Payment_Page.placeOrderUsingCreditCard();
+     Payment_Page.placeOrderUsingCreditCard();
      OrderConfirmation_Page.verifyThankYouText();
    });
 
