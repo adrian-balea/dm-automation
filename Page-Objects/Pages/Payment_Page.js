@@ -106,7 +106,7 @@ class Payment_Page {
     this.paypalPassword.setValue(config.payPallUserPassword);
     this.paypalLoginButton.click();
     browser.pause(10000);
-    /// paypal cokies //////////
+    /// Handel paypal cokies //////////
     var cookies = this.acceptPaypalCookiesLink.getText();
      if (cookies == "Accept Cookies"){
     this.acceptPaypalCookiesLink.waitForExist();
