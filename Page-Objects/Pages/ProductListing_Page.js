@@ -3,8 +3,11 @@ class ProductListing_Page {
     // For US
     // return $('a[sid="11822006"]');
 
-    //For UK
+    //For UK P3 Stage6
     return $('a[sid="25637001"]');
+
+    // Fro UK P2 Stage6
+    // return $('a[sid="15382601"]');
   }
 
   clickOnProductTile() {

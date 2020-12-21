@@ -30,30 +30,62 @@ class Payment_Page {
   get creditCardCVV() {
     return $("div>[id =encryptedSecurityCode]");
   }
-  get cardHolderName() {return $("#card-div > div > div > div.adyen-checkout__loading-input__form._1jpVsksYS5faJOp2y0Tpl4 > div.adyen-checkout__field.adyen-checkout__card__holderName > label > span.adyen-checkout__input-wrapper > input"
+  get cardHolderName() {
+    return $(
+      "#card-div > div > div > div.adyen-checkout__loading-input__form._1jpVsksYS5faJOp2y0Tpl4 > div.adyen-checkout__field.adyen-checkout__card__holderName > label > span.adyen-checkout__input-wrapper > input"
     );
   }
-  get placeOrderButton() { return $("body > div.js-device-info > main > div > div.container.checkout-container.checkout-roving > div.col-xs-12.col-sm-5.col-md-7 > div.adyen-pay-button__wrapper"
+  get placeOrderButton() {
+    return $(
+      "body > div.js-device-info > main > div > div.container.checkout-container.checkout-roving > div.col-xs-12.col-sm-5.col-md-7 > div.adyen-pay-button__wrapper"
     );
   }
 
-  get payPalOption() {return $("[data-pm='paypal']"); }
-  
-  get payPalButton() {return $("#paypal-container");  }
+  get payPalOption() {
+    return $("[data-pm='paypal']");
+  }
 
-  get paypalEmail() {return $("#email");  }
+  get payPalButton() {
+    return $("#paypal-container");
+  }
 
-  get paypalPassword() {return $("#password");  }
+  get paypalEmail() {
+    return $("#email");
+  }
 
-  get paypalLoginButton() {return $("#btnLogin");  }
+  get paypalPassword() {
+    return $("#password");
+  }
 
-  get acceptPaypalCookiesLink() {return $("#acceptAllButton");  }
+  get paypalLoginButton() {
+    return $("#btnLogin");
+  }
 
-  get paypalSubmitButton() { return $("#payment-submit-btn");  }
+  get acceptPaypalCookiesLink() {
+    return $("#acceptAllButton");
+  }
 
-  get klranaoption(){return $("[data-pm='klarna']");}
-  get klranaPlaceOrder() {return $("#adyen-pay-button-klarna");  }
-  get cookiesaAccepta(){return $('//*[@id="onetrust-accept-btn-handler"]');} 
+  get paypalSubmitButton() {
+    return $("#payment-submit-btn");
+  }
+
+  get klranaoption() {
+    return $("[data-pm='klarna']");
+  }
+  get klranaPlaceOrder() {
+    return $("#adyen-pay-button-klarna");
+  }
+  get cookiesaAccepta() {
+    return $('//*[@id="onetrust-accept-btn-handler"]');
+  }
+
+  get klarnaFrame() {
+    return $('iframe[name="klarna-pay-later-main"]');
+  }
+
+  get klarnaInvoiceAgeRestriction() {
+    return $("#invoice-age-restriction");
+  }
 
   placeOrderUsingCreditCard() {
     this.editShippingAddressLink.waitForExist();
@@ -95,10 +127,10 @@ class Payment_Page {
     browser.pause(10000);
     /// Handel paypal cokies //////////
     var cookies = this.acceptPaypalCookiesLink.getText();
-     if (cookies == "Accept Cookies"){
-    this.acceptPaypalCookiesLink.waitForExist();
-    this.acceptPaypalCookiesLink.click();
-    } 
+    if (cookies == "Accept Cookies") {
+      this.acceptPaypalCookiesLink.waitForExist();
+      this.acceptPaypalCookiesLink.click();
+    }
     this.paypalSubmitButton.waitForExist();
     this.paypalSubmitButton.scrollIntoView();
     this.paypalSubmitButton.click();
@@ -110,19 +142,19 @@ class Payment_Page {
     this.klranaoption.waitForExist();
     this.klranaoption.scrollIntoView();
     this.klranaoption.click();
-    browser.pause(10000);
+    this.klarnaFrame.waitForExist();
+    browser.switchToFrame(this.klarnaFrame);
+    this.klarnaInvoiceAgeRestriction.waitForExist();
+    browser.switchToParentFrame();
     this.klranaPlaceOrder.waitForExist();
     var cookies = this.cookiesaAccepta.getText();
-    if (cookies == "Accept All Cookies"){
+    if (cookies == "Accept All Cookies") {
       this.cookiesaAccepta.waitForExist();
       this.cookiesaAccepta.click();
-   } 
-  
-    this.klranaPlaceOrder.scrollIntoView();    
-    this.klranaPlaceOrder.click();   
-   
     }
 
-
+    this.klranaPlaceOrder.scrollIntoView();
+    this.klranaPlaceOrder.click();
+  }
 }
 export default new Payment_Page();

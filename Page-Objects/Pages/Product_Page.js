@@ -3,7 +3,7 @@ class Product_Page {
   get selecttab() {
     return $('//div[@class="size-title"]//a[1]');
   }
-  
+
   get addToCartButton() {
     return $("#addToCartButton");
   }
@@ -15,8 +15,11 @@ class Product_Page {
     // For US
     // return $('//*[@id="sizeSelector"]//li//a[@data-sku-code ="800090828511"]');
 
-    // For UK
+    // For UK P3 Stage6
     return $('//*[@id="sizeSelector"]//li//a[@data-sku-code ="190665311945"]');
+
+    // For UK P2 Srage6
+    // return $('//*[@id="sizeSelector"]//li//a[@data-sku-code ="883985693289"]');
   }
 
   get selecttab() {
