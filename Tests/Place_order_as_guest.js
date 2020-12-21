@@ -10,10 +10,11 @@ import Payment_Page from "../Page-Objects/Pages/Payment_Page";
 import OrderConfirmation_Page from "../Page-Objects/Pages/OrderConfirmation_Page";
 
 
+
 describe("Place order as Guest user using credit Card", () => {
   beforeEach(() => {
-   Home_Page.open("https://p3.stage6.dm.projecta.com/uk/en_gb");    
-    // Home_Page.open("https://p3.stage6.dm.projecta.com/us/en");
+    Home_Page.open("https://p3.stage6.dm.projecta.com/uk/en_gb");   
+   // Home_Page.open("https://p3.stage6.dm.projecta.com/us/en");
     Country_Popup.submitCountrySelection();
     Header.navigateToMenBoots();
     ProductListing_Page.clickOnProductTile();
@@ -29,13 +30,18 @@ describe("Place order as Guest user using credit Card", () => {
     browser.reloadSession();
   });
 
-   it("Places order as guest using credit card", () => {
-     Payment_Page.placeOrderUsingCreditCard();
-     OrderConfirmation_Page.verifyThankYouText();
-   });
+    it("Places order as guest using credit card", () => {
+       Payment_Page.placeOrderUsingCreditCard();
+      OrderConfirmation_Page.verifyThankYouText();
+     });
 
-  it("Places order as guest using Paypal", () => {
-    Payment_Page.placeOrderUsingPaypal();
+   it("Places order as guest using Paypal", () => {
+      Payment_Page.placeOrderUsingPaypal();
+     OrderConfirmation_Page.verifyThankYouText();
+     });
+
+  it("Places order as guest using klarna", () => {
+    Payment_Page.placeOrderUsingklarna();
     OrderConfirmation_Page.verifyThankYouText();
   });
 });

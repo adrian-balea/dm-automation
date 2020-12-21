@@ -30,43 +30,30 @@ class Payment_Page {
   get creditCardCVV() {
     return $("div>[id =encryptedSecurityCode]");
   }
-  get cardHolderName() {
-    return $(
-      "#card-div > div > div > div.adyen-checkout__loading-input__form._1jpVsksYS5faJOp2y0Tpl4 > div.adyen-checkout__field.adyen-checkout__card__holderName > label > span.adyen-checkout__input-wrapper > input"
+  get cardHolderName() {return $("#card-div > div > div > div.adyen-checkout__loading-input__form._1jpVsksYS5faJOp2y0Tpl4 > div.adyen-checkout__field.adyen-checkout__card__holderName > label > span.adyen-checkout__input-wrapper > input"
     );
   }
-  get placeOrderButton() {
-    return $(
-      "body > div.js-device-info > main > div > div.container.checkout-container.checkout-roving > div.col-xs-12.col-sm-5.col-md-7 > div.adyen-pay-button__wrapper"
+  get placeOrderButton() { return $("body > div.js-device-info > main > div > div.container.checkout-container.checkout-roving > div.col-xs-12.col-sm-5.col-md-7 > div.adyen-pay-button__wrapper"
     );
   }
 
-  get payPalOption() {
-    return $("[data-pm='paypal']");
-  }
+  get payPalOption() {return $("[data-pm='paypal']"); }
+  
+  get payPalButton() {return $("#paypal-container");  }
 
-  get payPalButton() {
-    return $("#paypal-container");
-  }
+  get paypalEmail() {return $("#email");  }
 
-  get paypalEmail() {
-    return $("#email");
-  }
+  get paypalPassword() {return $("#password");  }
 
-  get paypalPassword() {
-    return $("#password");
-  }
+  get paypalLoginButton() {return $("#btnLogin");  }
 
-  get paypalLoginButton() {
-    return $("#btnLogin");
-  }
-
-  get acceptPaypalCookiesLink() {return $("#acceptAllButton");
-  }
+  get acceptPaypalCookiesLink() {return $("#acceptAllButton");  }
 
   get paypalSubmitButton() { return $("#payment-submit-btn");  }
-  
-    
+
+  get klranaoption(){return $("[data-pm='klarna']");}
+  get klranaPlaceOrder() {return $("#adyen-pay-button-klarna");  }
+  get cookiesaAccepta(){return $('//*[@id="onetrust-accept-btn-handler"]');} 
 
   placeOrderUsingCreditCard() {
     this.editShippingAddressLink.waitForExist();
@@ -118,5 +105,24 @@ class Payment_Page {
     browser.switchToWindow(parentGUID);
     browser.pause(10000);
   }
+
+  placeOrderUsingklarna() {
+    this.klranaoption.waitForExist();
+    this.klranaoption.scrollIntoView();
+    this.klranaoption.click();
+    browser.pause(10000);
+    this.klranaPlaceOrder.waitForExist();
+    var cookies = this.cookiesaAccepta.getText();
+    if (cookies == "Accept All Cookies"){
+      this.cookiesaAccepta.waitForExist();
+      this.cookiesaAccepta.click();
+   } 
+  
+    this.klranaPlaceOrder.scrollIntoView();    
+    this.klranaPlaceOrder.click();   
+   
+    }
+
+
 }
 export default new Payment_Page();
