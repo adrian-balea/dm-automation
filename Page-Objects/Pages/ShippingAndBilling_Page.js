@@ -1,4 +1,4 @@
-var config = require("../../TestData/TestData");
+var data = require("../../TestData/TestData");
 
 class ShippingAndBilling_Page {
   get emailField() {
@@ -35,15 +35,15 @@ class ShippingAndBilling_Page {
 
   enterNewAddressAsGuest() {
     this.emailField.waitForExist();
-    this.emailField.setValue(config.guestUserEmail);
-    this.firstNameField.setValue(config.firstName);
-    this.lastNameField.setValue(config.lastName);
+    this.emailField.setValue(data.guestUserEmail);
+    this.firstNameField.setValue(data.firstName);
+    this.lastNameField.setValue(data.lastName);
     this.shippingAddressSearchField.scrollIntoView();
-    this.shippingAddressSearchField.setValue(config.guestUserAddress);
+    this.shippingAddressSearchField.setValue(data.guestUserAddress);
     this.suggestedAddress.waitForExist();
     this.suggestedAddress.click();
     browser.pause(1000);
-    this.phoneNumberField.setValue(config.guestUserMobileNumber);
+    this.phoneNumberField.setValue(data.guestUserMobileNumber);
     this.continiueToPaymentButton.scrollIntoView();
     browser.pause(1000);
     this.continiueToPaymentButton.click();

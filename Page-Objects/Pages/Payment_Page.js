@@ -1,4 +1,4 @@
-var config = require("../../TestData/TestData");
+var data = require("../../TestData/TestData");
 
 class Payment_Page {
   get editShippingAddressLinks() {
@@ -95,15 +95,15 @@ class Payment_Page {
     browser.switchToParentFrame();
     browser.switchToFrame(0);
     this.creditCardNumberField.waitForExist();
-    this.creditCardNumberField.setValue(config.creditCardNumber);
+    this.creditCardNumberField.setValue(data.creditCardNumber);
     browser.switchToParentFrame();
     browser.switchToFrame(1);
-    this.creditCardExpiryDate.setValue(config.creditCardExpiryDate);
+    this.creditCardExpiryDate.setValue(data.creditCardExpiryDate);
     browser.switchToParentFrame();
     browser.switchToFrame(2);
-    this.creditCardCVV.setValue(config.creditCardCVV);
+    this.creditCardCVV.setValue(data.creditCardCVV);
     browser.switchToParentFrame();
-    this.cardHolderName.setValue(config.cardHolderName);
+    this.cardHolderName.setValue(data.cardHolderName);
     this.placeOrderButton.scrollIntoView();
     this.placeOrderButton.click();
   }
@@ -118,11 +118,11 @@ class Payment_Page {
     browser.pause(10000);
     ///////// handel the windows /////////
     var parentGUID = browser.getWindowHandle();
-    browser.switchWindow(config.payPalURL);
+    browser.switchWindow(data.payPalURL);
     this.paypalEmail.waitForExist();
     this.paypalEmail.clearValue();
-    this.paypalEmail.setValue(config.payPallUserEmail);
-    this.paypalPassword.setValue(config.payPallUserPassword);
+    this.paypalEmail.setValue(data.payPallUserEmail);
+    this.paypalPassword.setValue(data.payPallUserPassword);
     this.paypalLoginButton.click();
     browser.pause(10000);
     /// Handel paypal cokies //////////
