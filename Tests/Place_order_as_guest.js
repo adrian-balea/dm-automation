@@ -8,11 +8,10 @@ import LoginCheckout_Page from "../Page-Objects/Pages/LoginCheckout_Page";
 import ShippingAndBilling_Page from "../Page-Objects/Pages/ShippingAndBilling_Page";
 import Payment_Page from "../Page-Objects/Pages/Payment_Page";
 import OrderConfirmation_Page from "../Page-Objects/Pages/OrderConfirmation_Page";
-
+//var data = require("../../TestData/TestData");
 describe("Place order as Guest user using credit Card", () => {
   beforeEach(() => {
-    Home_Page.open("https://p3.stage6.dm.projecta.com/uk/en_gb");
-    // Home_Page.open("https://p3.stage6.dm.projecta.com/us/en");
+    Home_Page.open();
     Country_Popup.submitCountrySelection();
     Header.navigateToMenBoots();
     ProductListing_Page.clickOnProductTile();
