@@ -41,8 +41,8 @@ class ShippingAndBilling_Page {
     this.shippingAddressSearchField.scrollIntoView();
     this.shippingAddressSearchField.setValue(data.guestUserAddress);
     this.suggestedAddress.waitForExist();
-    this.suggestedAddress.click();
     browser.pause(1000);
+    this.suggestedAddress.click();
     this.phoneNumberField.setValue(data.guestUserMobileNumber);
     this.continiueToPaymentButton.scrollIntoView();
     browser.pause(1000);

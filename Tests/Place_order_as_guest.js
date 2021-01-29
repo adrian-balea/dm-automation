@@ -27,18 +27,18 @@ describe("Place order as Guest user using credit Card", () => {
     browser.reloadSession();
   });
 
-  it("Places order as guest using credit card", () => {
-    Payment_Page.placeOrderUsingCreditCard();
-    OrderConfirmation_Page.verifyThankYouText();
-  });
+     it("Places order as guest using credit card", () => {
+       Payment_Page.placeOrderUsingCreditCard();
+       OrderConfirmation_Page.verifyThankYouText();
+     });
 
-  it("Places order as guest using Paypal", () => {
-    Payment_Page.placeOrderUsingPaypal();
-    OrderConfirmation_Page.verifyThankYouText();
-  });
+      it("Places order as guest using Paypal", () => {
+        Payment_Page.placeOrderUsingPaypal();
+        OrderConfirmation_Page.verifyThankYouText();
+      });
 
-  it("Places order as guest using klarna", () => {
-    Payment_Page.placeOrderUsingklarna();
-    OrderConfirmation_Page.verifyThankYouText();
-  });
+      it("Places order as guest using klarna", () => {
+        Payment_Page.placeOrderUsingklarna();
+        OrderConfirmation_Page.verifyThankYouText();
+      });
 });

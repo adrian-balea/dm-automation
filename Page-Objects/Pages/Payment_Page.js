@@ -16,13 +16,13 @@ class Payment_Page {
   }
 
   get creditCardOption() {
-    return $(
-      "#adyen-encrypted-form > div > div.chckt-pm.chckt-pm-card.js-chckt-pm.js-chckt-pm__pm-holder > div.chckt-pm__header.js-chckt-pm__header"
+    return $("#adyen-encrypted-form > div > div.chckt-pm.chckt-pm-card.js-chckt-pm.js-chckt-pm__pm-holder > div.chckt-pm__header.js-chckt-pm__header"
     );
   }
 
   get creditCardNumberField() {
-    return $("#encryptedCardNumber");
+   // return $("#encryptedCardNumber");
+    return $("div>[id =encryptedCardNumber]");  // changed by 29012021
   }
   get creditCardExpiryDate() {
     return $("#encryptedExpiryDate");
@@ -31,8 +31,7 @@ class Payment_Page {
     return $("div>[id =encryptedSecurityCode]");
   }
   get cardHolderName() {
-    return $(
-      "#card-div > div > div > div.adyen-checkout__loading-input__form._1jpVsksYS5faJOp2y0Tpl4 > div.adyen-checkout__field.adyen-checkout__card__holderName > label > span.adyen-checkout__input-wrapper > input"
+    return $("#card-div > div > div > div.adyen-checkout__loading-input__form._1jpVsksYS5faJOp2y0Tpl4 > div.adyen-checkout__field.adyen-checkout__card__holderName > label > span.adyen-checkout__input-wrapper > input"
     );
   }
   get placeOrderButton() {
@@ -92,9 +91,11 @@ class Payment_Page {
     this.creditCardOption.waitForExist();
     this.creditCardOption.scrollIntoView();
     this.creditCardOption.click();
+    browser.pause(1000);
     browser.switchToParentFrame();
     browser.switchToFrame(0);
     this.creditCardNumberField.waitForExist();
+    this.creditCardNumberField.click();
     this.creditCardNumberField.setValue(data.creditCardNumber);
     browser.switchToParentFrame();
     browser.switchToFrame(1);
@@ -139,9 +140,11 @@ class Payment_Page {
   }
 
   placeOrderUsingklarna() {
-    this.klranaoption.waitForExist();
+   this.klranaoption.waitForExist();
     this.klranaoption.scrollIntoView();
     this.klranaoption.click();
+    
+  ////////////  changed  ******** The frame and cockoies popup has removed ******* 29012021 *************/////////////////////
     this.klarnaFrame.waitForExist();
     browser.switchToFrame(this.klarnaFrame);
     this.klarnaInvoiceAgeRestriction.waitForExist();
@@ -149,9 +152,10 @@ class Payment_Page {
     this.klranaPlaceOrder.waitForExist();
     var cookies = this.cookiesaAccepta.getText();
     if (cookies == "Accept All Cookies") {
-      this.cookiesaAccepta.waitForExist();
-      this.cookiesaAccepta.click();
-    }
+    this.cookiesaAccepta.waitForExist();
+    this.cookiesaAccepta.click();
+     }
+ /////////////////////////******************* /////////////////////
 
     this.klranaPlaceOrder.scrollIntoView();
     this.klranaPlaceOrder.click();
