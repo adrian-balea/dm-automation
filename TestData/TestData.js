@@ -14,6 +14,6 @@ module.exports = {
   payPallUserPassword:"9Nja2.Ty",
   RegisterUserFirstName: "AyataTest",
   RegisterUserLastName: "QA",
-  RegisterUserEmail: "marten.testing2021@gmail.com",
+  RegisterUserEmail: "ayatatest+123@mailinator.com",
   RegisterUserPassword:"qwerty@123123",
 };
