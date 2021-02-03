@@ -1,5 +1,5 @@
 module.exports = {
-  applicationURL:"https://p3.Stage6.dm.projecta.com/uk/en_gb",
+  applicationURL:"https://p2.Stage6.dm.projecta.com/uk/en_gb",
   firstName: "John",
   lastName: "Smith",
   guestUserEmail: "ayatacommerce@mailinator.com",
@@ -11,5 +11,9 @@ module.exports = {
   cardHolderName:"J Smith",
   payPalURL:"www.sandbox.paypal.com/",
   payPallUserEmail:"sb-rnibz2253238@personal.example.com",
-  payPallUserPassword:"9Nja2.Ty"
+  payPallUserPassword:"9Nja2.Ty",
+  RegisterUserFirstName: "AyataTest",
+  RegisterUserLastName: "QA",
+  RegisterUserEmail: "marten.testing2021@gmail.com",
+  RegisterUserPassword:"qwerty@123123",
 };
