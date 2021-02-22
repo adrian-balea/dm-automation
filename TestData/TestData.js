@@ -1,5 +1,5 @@
 module.exports = {
-  applicationURL:"https://p2.Stage6.dm.projecta.com/uk/en_gb",
+  applicationURL:"https://p3.Stage6.dm.projecta.com/uk/en_gb",
   firstName: "John",
   lastName: "Smith",
   guestUserEmail: "ayatacommerce@mailinator.com",
@@ -16,4 +16,5 @@ module.exports = {
   RegisterUserLastName: "QA",
   RegisterUserEmail: "ayatatest+123@mailinator.com",
   RegisterUserPassword:"qwerty@123123",
+  GiftcarduserEmailid:"martentesting@gmail.com",
 };

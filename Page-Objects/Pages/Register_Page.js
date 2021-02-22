@@ -40,7 +40,11 @@ class Register_Page {
     this.RegisterFirstName.click();
     this.RegisterFirstName.setValue(data.RegisterUserFirstName);
     this.RegisterLastName.setValue(data.RegisterUserLastName);
+///////////  Randum email id ////////////////
+   //  var randomInt = randomGenerator.nextInt(1000);  
+     //this.RegisterEmailAddress.setValue("username"+ randomInt +"@mailinator.com"); 
     this.RegisterEmailAddress.setValue(data.RegisterUserEmail);
+    browser.pause(5000);
     this.RegisterUserPassword.setValue(data.RegisterUserPassword);
     this.RegisterCheckbox.scrollIntoView();
     this.RegisterUserConfPassword.setValue(data.RegisterUserPassword);
