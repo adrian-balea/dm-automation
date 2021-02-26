@@ -4,6 +4,7 @@ class GiftCradProduct_Page {
 
   get sizeselect (){
     return $('//*[@id="sizeSelector"]//li[1]//a');
+   // return $("#sizeSelector > li.price-selection.selected > a");
   }
     get recipentname() {
       return $('//*[@id="recipient_name"]');
@@ -25,9 +26,11 @@ class GiftCradProduct_Page {
 
   get AddtoBagButton (){
     //return $('//*[@id="addToCartButton"]');
+    //return $('/html/body/div[2]/main/div[2]/div/div/div[5]/div[7]/button');
      //return $('//*[@id="add-to-cart"]');
-     return $("#addToCartButton");
-     //return $ ("div>[id =addToCartButton]");
+     //return $("#addToCartButton");
+
+     return $ ("div>[id =addToCartButton]");
   }
 
     SelectGiftcardAmount () {
@@ -36,14 +39,18 @@ class GiftCradProduct_Page {
     }
     enterUserdetails () {
       this.recipentname.scrollIntoView();
-      this.recipentname.setValue(data.GiftcarduserEmailid);
+      this.recipentname.setValue(data.RegisterUserFirstName);
       this.Recipentemail.setValue(data.GiftcarduserEmailid);
-      this.recipentconformeemail.setValue(data.GiftcarduserEmailid);
       this.sendername.setValue(data.RegisterUserFirstName);
+      browser.pause(10000);
+      this.recipentconformeemail.setValue(data.GiftcarduserEmailid);
       this.Giftcardmessage.setValue('Buy the Gift card');
-      browser.pause(2000);
-      //this.AddtoBagButton.waitForDisplayed();
+      this.AddtoBagButton.waitForDisplayed();      
       this.AddtoBagButton.click();
+     
+     
+     browser.pause(10000);
+   
     }
   }
   export default new GiftCradProduct_Page();

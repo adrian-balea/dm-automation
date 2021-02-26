@@ -19,14 +19,14 @@ describe("Places Gift card order as guest using credit card", function () {
     GiftCardBuy_Page.clickOnGiftCardBuyButton();
     GiftCardProduct_Page.SelectGiftcardAmount();
     GiftCardProduct_Page.enterUserdetails();
-    
+    browser.pause(10000);
     // Need to add the flow as per requirement//////////
     //  Product_Page.clickOnAddToCart();
-    //Product_Page.clickOnAddToCart();
-    //Product_Page.clickOnCheckoutButton();
-    Bag_Page.clickOnCheckoutButton();
-    LoginCheckout_Page.clickOnGuestCheckout();
-    ShippingAndBilling_Page.enterNewAddressAsGuest();
+   // Product_Page.clickOnAddToCart();
+   // Product_Page.clickOnCheckoutButton();
+   // Bag_Page.clickOnCheckoutButton();
+   // LoginCheckout_Page.clickOnGuestCheckout();
+    //ShippingAndBilling_Page.enterNewAddressAsGuest();
  
   });
 
